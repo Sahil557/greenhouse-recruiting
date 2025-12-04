@@ -21,6 +21,16 @@ export interface Candidate {
   designation: string;
   additionalInfo?: AdditionalInfo;
   interviews?: Interview[];
+
+  // Filterable fields
+  applicationType?: 'full-time' | 'part-time' | 'contract';
+  jobCategory?: 'engineering' | 'design' | 'marketing';
+  crm?: 'hubspot' | 'salesforce' | 'zoho';
+  profileStatus?: 'verified' | 'unverified';
+  source?: 'referral' | 'job-board' | 'social-media';
+  responsibility?: 'manager' | 'team-lead' | 'contributor';
+  pipelineTask?: 'pending' | 'in-progress' | 'completed';
+  education?: 'high-school' | 'bachelor' | 'master' | 'phd';
 }
 
 export interface CandidatesResponse {
@@ -34,7 +44,11 @@ export interface CandidatesResponse {
 export interface FilterState {
   search: string;
   sort: 'activity_desc' | 'activity_asc' | 'name_asc' | 'name_desc';
-  application_type: string[];
-  jobs: string[];
-  sources: string[];
+  applicationType: Candidate['applicationType'][];
+  jobs: Candidate['jobCategory'][];
+  sources: Candidate['source'][];
+  profileStatus: Candidate['profileStatus'][];
+  responsibility: Candidate['responsibility'][];
+  pipelineTask: Candidate['pipelineTask'][];
+  education: Candidate['education'][];
 }

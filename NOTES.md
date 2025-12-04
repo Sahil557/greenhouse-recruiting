@@ -14,10 +14,10 @@
 - [x] Collapsible filter sections
 - [x] Reset Filters button
 - [x] Candidate list display
-- [ ] Candidate card components
+- [x] Candidate card components
 - [x] Pagination component
-- [ ] Search filtering functionality
-- [ ] Sort functionality
+- [x] Search filtering functionality
+- [x] Sort functionality
 - [x] Pagination logic
 
 ### Backend
@@ -89,6 +89,7 @@
 - Add **unit and integration tests** for critical components.  
 - Enhance **UI/UX** with advanced transitions and micro-interactions.  
 - Use of Mock data for better Readability.
+- Added functionality for search, filter, sort, pagination and generate report on excel and json.
 
 ## Libraries/Packages Added
 

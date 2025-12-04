@@ -10,6 +10,8 @@ interface SidebarProps {
   onSearchChange: (value: string) => void;
   selectedOptions: Record<string, string>;
   onOptionChange: (section: string, value: string) => void;
+  sortValue: DropdownOption;
+  onSortChange: (option: DropdownOption) => void;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -17,17 +19,16 @@ const Sidebar: React.FC<SidebarProps> = ({
   onSearchChange,
   selectedOptions,
   onOptionChange,
+  sortValue,
+  onSortChange,
 }) => {
   const [fullTextSearch, setFullTextSearch] = useState(false);
-  const [sortValue, setSortValue] = useState<DropdownOption>(sortOptions[0]);
-
 
   return (
     <aside className="w-[248px] bg-[#f7f8f7] min-h-screen px-6 pt-2 pb-6">
       {/* Search Input */}
       <SearchInput value={searchValue} onChange={onSearchChange} />
 
-      {/* Full Text Search Toggle */}
       <div className="mt-2">
         <div className="flex items-center gap-2">
           <label className="relative inline-flex items-center cursor-pointer">
@@ -60,27 +61,15 @@ const Sidebar: React.FC<SidebarProps> = ({
         </p>
       </div>
 
-      {/* Sort Dropdown (visual only) */}
       <div className="mt-4">
         <Dropdown
           options={sortOptions}
           value={sortValue}
-          onChange={(option) => setSortValue(option)}
+          onChange={onSortChange}
         />
       </div>
 
-      {/* Filter Sections */}
       <div className="mt-4">
-        {/* TODO: Add CollapsibleSection components for: */}
-        {/* - Application Type */}
-        {/* - Jobs */}
-        {/* - CRM */}
-        {/* - Profile Details */}
-        {/* - Source */}
-        {/* - Responsibility */}
-        {/* - Pipeline Tasks */}
-        {/* - Education */}
-        {/* See CollapsibleSection.tsx for a starting point */}
         <CollapsibleSection
           items={accordionItems.map((item) => ({
             title: item.title,
@@ -97,7 +86,6 @@ const Sidebar: React.FC<SidebarProps> = ({
         />
       </div>
 
-      {/* Reset Filters Button */}
       {Object.values(selectedOptions).some((value) => value) && (
         <Button
           startIcon="Reset"

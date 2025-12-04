@@ -9,6 +9,7 @@ export type IconName =
   | "Info"
   | "ArrowLeft1"
   | "Search"
+  | "NoCandidate"
   | "Reset";
 
 interface IconProps {
@@ -124,24 +125,24 @@ const Icon = ({ name, className = "", width = 24, height = 24 }: IconProps) => {
           />
         </svg>
       );
-      case "ArrowLeft1":
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
-      viewBox="0 0 14 14"
-      fill="none"
-      className={className}
-    >
-      <path
-        d="M5.39355 6.99512L9.68149 11.5313C9.88084 11.7412 9.87035 12.0735 9.6605 12.2728C9.45065 12.4722 9.11839 12.4617 8.91904 12.2519L3.94981 6.99512L8.91904 1.73836C9.11839 1.52851 9.45065 1.51802 9.6605 1.71738C9.87035 1.91674 9.88084 2.24899 9.68149 2.45886L5.39355 6.99512Z"
-        fill="#333333"
-        stroke="#333333"
-        strokeWidth="0.6995"
-      />
-    </svg>
-  );
+    case "ArrowLeft1":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={width}
+          height={height}
+          viewBox="0 0 14 14"
+          fill="none"
+          className={className}
+        >
+          <path
+            d="M5.39355 6.99512L9.68149 11.5313C9.88084 11.7412 9.87035 12.0735 9.6605 12.2728C9.45065 12.4722 9.11839 12.4617 8.91904 12.2519L3.94981 6.99512L8.91904 1.73836C9.11839 1.52851 9.45065 1.51802 9.6605 1.71738C9.87035 1.91674 9.88084 2.24899 9.68149 2.45886L5.39355 6.99512Z"
+            fill="#333333"
+            stroke="#333333"
+            strokeWidth="0.6995"
+          />
+        </svg>
+      );
     case "Reset":
       return (
         <svg
@@ -214,6 +215,25 @@ const Icon = ({ name, className = "", width = 24, height = 24 }: IconProps) => {
             d="M7.99774 6.82575L11.1217 3.70249C11.3945 3.42968 11.3945 2.9869 11.1217 2.71339C10.8475 2.44059 10.4047 2.44059 10.1319 2.71339L7.00865 5.83596L3.88608 2.71409C3.61327 2.44129 3.16979 2.44129 2.89699 2.71409C2.62418 2.9869 2.62418 3.42968 2.89699 3.70249L6.01955 6.82575L2.97323 9.87138C2.70043 10.1442 2.70043 10.5877 2.97323 10.8612C3.24744 11.134 3.69022 11.134 3.96372 10.8612L7.00935 7.81485L10.0557 10.8612C10.3285 11.134 10.772 11.134 11.0448 10.8612C11.3176 10.5884 11.3176 10.1449 11.0448 9.87138L7.99774 6.82575Z"
             fill="#909090"
           />
+        </svg>
+      );
+    case "NoCandidate":
+      return (
+        <svg
+          width="64"
+          height="64"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#9ca3af"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="mx-auto mb-3"
+        >
+          <circle cx="9" cy="7" r="4" />
+          <path d="M2 21c0-4 3-7 7-7" />
+          <line x1="16" y1="16" x2="22" y2="22" />
+          <circle cx="19" cy="19" r="3" />
         </svg>
       );
 

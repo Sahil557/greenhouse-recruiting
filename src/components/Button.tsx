@@ -49,7 +49,7 @@ export default function Button({
   > = {
     outlined: {
       primary:
-        "bg-[#f9fafb] text-success border border-success hover:bg-success/10 active:ring-4 active:ring-success/30 active:ring-offset-0 cursor-pointer disabled:bg-[#f7f8f7] disabled:text-orchid disabled:border-orchid disabled:cursor-not-allowed disabled:ring-0 disabled:ring-offset-0 transition-all duration-200 ease-out active:scale-[0.98]",
+        "bg-[#f9fafb] text-success border border-success hover:bg-success/10 active:ring-4 active:ring-success/30 active:ring-offset-0 cursor-pointer disabled:bg-[#f7f8f7] disabled:text-fog disabled:border-fog disabled:cursor-not-allowed disabled:ring-0 disabled:ring-offset-0 transition-all duration-200 ease-out active:scale-[0.98]",
       },
   };
 
